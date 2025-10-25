@@ -1,0 +1,123 @@
+/*login.css*/
+:root{
+  --bg:#0b0b0b;
+  --panel:#111;
+  --muted:#9aa3ad;
+  --green:#1fb16a;
+  --accent-grad:linear-gradient(135deg,#00b894,#00e0a8);
+}
+
+*{box-sizing:border-box;}
+html,body{
+  height:100%;
+  margin:0;
+  font-family:'Poppins',system-ui,Segoe UI,Roboto,Arial;
+  background:radial-gradient(1200px 400px at 10% 10%, rgba(0,160,255,0.03), transparent), var(--bg);
+  color:#eaf4ff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:40px;
+  overflow-x:hidden;
+}
+
+.container{
+  background:var(--panel);
+  padding:30px 40px;
+  border-radius:14px;
+  width:100%;
+  max-width:500px; /* Ajustado para ficar próximo ao cadastro */
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+  animation:fadeInUp 1s ease forwards;
+}
+
+h1{
+  text-align:center;
+  margin-bottom:25px; /* ligeiramente maior */
+  font-weight:700;
+  font-size:1.8rem;
+}
+
+form{
+  display:flex;
+  flex-direction:column;
+  gap:14px; /* espaçamento consistente com cadastro */
+}
+
+label{
+  font-size:.95rem;
+  color:var(--muted);
+}
+
+input{
+  padding:14px; /* igual ao cadastro */
+  border-radius:10px;
+  border:none;
+  background:#0e0e0f;
+  color:#eaf4ff;
+  font-size:1rem;
+  transition:all 0.3s ease;
+}
+
+input:focus{
+  outline:none;
+  box-shadow:0 0 8px rgba(31,177,106,0.5);
+}
+
+button{
+  padding:14px; /* igual ao cadastro */
+  border:none;
+  border-radius:10px;
+  font-weight:700;
+  background:var(--accent-grad);
+  color:#042;
+  cursor:pointer;
+  font-size:1rem;
+  transition:all 0.3s ease;
+}
+
+button:hover{
+  transform:translateY(-2px) scale(1.03);
+  box-shadow:0 6px 15px rgba(0,224,168,0.4);
+}
+
+a.btn{
+  display:inline-block;
+  text-align:center;
+  padding:12px;
+  margin-top:12px;
+  border-radius:10px;
+  background:transparent;
+  color:var(--green);
+  border:1px solid var(--green);
+  text-decoration:none;
+  font-weight:600;
+  transition:all 0.3s ease;
+}
+
+a.btn:hover{
+  background:var(--green);
+  color:#0b0b0b;
+}
+
+@keyframes fadeInUp{
+  0%{opacity:0; transform:translateY(20px);}
+  100%{opacity:1; transform:translateY(0);}
+}
+a {
+  color: rgba(0,224,168,0.4);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
