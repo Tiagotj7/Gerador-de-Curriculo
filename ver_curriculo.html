@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currículo — Marina Costa Oliveira</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif;}
+    body {
+      background: #f3f4f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px;
+    }
+
+    .cv-container {
+      width: 800px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      overflow: hidden;
+      animation: fadeIn 0.9s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(25px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    header {
+      background: #1b1b1b;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 25px 30px;
+      gap: 20px;
+    }
+
+    header img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #fff;
+    }
+
+    header div {
+      flex: 1;
+    }
+
+    header h1 {
+      font-size: 26px;
+      font-weight: 600;
+    }
+
+    header p {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-top: 4px;
+    }
+
+    .cv-body {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 25px 30px;
+    }
+
+    .left {
+      width: 35%;
+      background: #fafafa;
+      padding: 20px;
+      border-right: 2px solid #eee;
+    }
+
+    .right {
+      width: 65%;
+      padding: 20px 25px;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .section h3 {
+      color: #1a1a1a;
+      border-bottom: 2px solid #e1e1e1;
+      padding-bottom: 6px;
+      margin-bottom: 10px;
+      font-size: 17px;
+    }
+
+    .info p, .skills ul li, .exp p, .edu p {
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 6px;
+    }
+
+    ul {list-style: none;}
+
+    .skills ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .skills li {
+      background: #1b1b1b;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 5px;
+      font-size: 13px;
+    }
+
+    .exp h4, .edu h4 {
+      font-size: 15px;
+      color: #1b1b1b;
+      margin-bottom: 4px;
+    }
+
+    .exp small, .edu small {
+      color: #777;
+      font-size: 13px;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    footer {
+      background: #1b1b1b;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 768px) {
+      body {padding: 10px;}
+      .cv-container {width: 100%;}
+      .cv-body {flex-direction: column;}
+      .left, .right {width: 100%; border-right: none;}
+      header {flex-direction: column; text-align: center;}
+      header img {margin-bottom: 10px;}
+    }
+  </style>
+</head>
+<body>
+
+<a href="index.html" 
+   style="position: absolute;top: 40px;left: 30px; margin-bottom:15px; color:#1b1b1b; 
+          text-decoration:none; background:#e1e1e1; padding:6px 12px; 
+          border-radius:6px; font-weight:500; transition:all 0.3s ease;">
+   ⬅ Voltar ao início
+</a>
+
+  <div class="cv-container">
+    <header>
+      <img src="https://images.pexels.com/photos/34206555/pexels-photo-34206555.jpeg" alt="Foto de Perfil">
+      <div>
+        <h1>Marina Costa Oliveira</h1>
+        <p>Desenvolvedora Front-End | UX Designer</p>
+      </div>
+    </header>
+
+    <div class="cv-body">
+      <div class="left">
+        <div class="section info">
+          <h3>Contato</h3>
+          <p>📧 marina.oliveira.dev@gmail.com</p>
+          <p>📞 (11) 98765-4321</p>
+          <p>💻 github.com/marinadev</p>
+          <p>🔗 linkedin.com/in/marinacostaoliveira</p>
+        </div>
+
+        <div class="section skills">
+          <h3>Habilidades</h3>
+          <ul>
+            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li>
+            <li>TypeScript</li><li>Node.js</li><li>Figma</li><li>Git</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h3>Certificações</h3>
+          <p>Google UX Design — 2024</p>
+          <p>React Developer – Alura (2023)</p>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="section exp">
+          <h3>Experiência</h3>
+          <div>
+            <h4>Desenvolvedora Front-End — PixelTech Studio</h4>
+            <small>Fev 2024 – Presente</small>
+            <p>Desenvolvimento de interfaces responsivas e dinâmicas utilizando React, Tailwind e integração com APIs REST.</p>
+          </div>
+
+          <div>
+            <h4>Estagiária em UX/UI Design — Agência Vision</h4>
+            <small>Jun 2023 – Jan 2024</small>
+            <p>Criação de protótipos no Figma, realização de testes de usabilidade e colaboração em redesigns de sites corporativos.</p>
+          </div>
+
+          <div>
+            <h4>Assistente de Mídia Digital — Start Comunicação</h4>
+            <small>Jan 2022 – Mai 2023</small>
+            <p>Gerenciamento de redes sociais e criação de campanhas visuais com foco em engajamento e conversão.</p>
+          </div>
+        </div>
+
+        <div class="section edu">
+          <h3>Formação</h3>
+          <div>
+            <h4>Tecnólogo em Análise e Desenvolvimento de Sistemas — Universidade Paulista (UNIP)</h4>
+            <small>2023 – 2026</small>
+          </div>
+          <div>
+            <h4>Curso de UX/UI Design — Origamid</h4>
+            <small>2023</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      Exemplo de currículo fictício — Marina Costa Oliveira © 2025
+    </footer>
+  </div>
+</body>
+</html>

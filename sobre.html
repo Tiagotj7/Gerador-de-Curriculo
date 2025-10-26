@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sobre — Gerador de Currículos</title>
+  <meta name="description" content="Sobre o Gerador de Currículos: plataforma rápida e profissional para criar seu CV." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+  <style>
+    :root{
+      --bg:#0b0b0b;
+      --panel:#111;
+      --muted:#9aa3ad;
+      --green:#1fb16a;
+      --accent-grad:linear-gradient(135deg,#00b894,#00e0a8);
+    }
+
+    *{box-sizing:border-box;}
+    html,body{height:100%;margin:0;font-family:'Poppins',system-ui,Segoe UI,Roboto,Arial;
+      background:radial-gradient(1200px 400px at 10% 10%, rgba(0,160,255,0.03), transparent), #0a0a0a;
+      color:#eaf4ff;
+      overflow-x:hidden;
+    }
+
+    .container{width:92%;max-width:1200px;margin:40px auto}
+
+    header{
+      display:flex;justify-content:space-between;align-items:center;padding:6px 0;
+      opacity:0;transform:translateY(-20px);
+      animation:fadeInUp 1s ease forwards;animation-delay:0.1s;
+    }
+
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:46px;height:46px;border-radius:10px;background:var(--accent-grad);
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:#052;
+    }
+
+    .brand-name{font-weight:700;}
+    .brand-subtitle{font-size:.85rem;color:var(--muted);}
+
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600;transition:all 0.3s ease;}
+    nav a:hover{color:var(--green);}
+
+    main{margin-top:28px;opacity:0;transform:translateY(20px);animation:fadeInUp 1s ease forwards;animation-delay:0.3s;}
+
+    h1{font-size:2.4rem;margin-bottom:12px;}
+    h2{font-size:1.6rem;margin-top:24px;margin-bottom:12px;color:var(--green);}
+    p{color:var(--muted);line-height:1.45;font-size:1rem;margin-bottom:12px;}
+
+    .panel{background:var(--panel);padding:24px;border-radius:14px;border:1px solid rgba(255,255,255,0.03);
+      box-shadow:0 10px 30px rgba(0,0,0,0.6);margin-top:20px;
+    }
+
+    footer{margin-top:28px;color:var(--muted);text-align:center;font-size:.95rem;}
+    footer a{color:var(--green);text-decoration:none;transition:all 0.3s ease;}
+    footer a:hover{text-decoration:underline;}
+
+    @keyframes fadeInUp{
+      0%{opacity:0; transform:translateY(20px);}
+      100%{opacity:1; transform:translateY(0);}
+    }
+
+    @media (max-width:768px){h1{font-size:2rem}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">GC</div>
+        <div>
+          <div class="brand-name">Gerador de Currículos</div>
+          <div class="brand-subtitle">Rápido • Simples • Profissional</div>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Início</a>
+        <a href="ver_curriculo.html">Ver Currículos</a>
+        <a href="index.html" class="btn btn-primary" style="padding:6px 14px;font-size:.85rem;">Voltar</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Sobre o Gerador de Currículos</h1>
+      <p>O <strong>Gerador de Currículos</strong> foi desenvolvido para tornar a criação de currículos profissionais rápida, simples e eficiente. Com um layout limpo, é possível preencher seus dados, salvar no banco e gerar PDFs prontos para processos seletivos.</p>
+
+      <div class="panel">
+        <h2>Funcionalidades Principais</h2>
+        <p><strong>Cadastro intuitivo:</strong> Formulário simples para inserir suas informações pessoais, experiência e habilidades.</p>
+        <p><strong>Visualização do currículo:</strong> Painel em tempo real para conferir como seu currículo ficará antes de gerar o PDF.</p>
+        <p><strong>Geração de PDF:</strong> Crie rapidamente um PDF profissional, pronto para enviar para recrutadores.</p>
+        <p><strong>Segurança:</strong> Todos os dados são armazenados de forma segura em banco MySQL, mantendo confidencialidade.</p>
+      </div>
+
+      <div class="panel">
+        <h2>Sobre o Desenvolvedor</h2>
+        <p>Desenvolvido por <strong>Tiago Carvalho Gonçalves</strong>, estudante e desenvolvedor Full-Stack, com foco em aplicações web, integração de APIs e automação de processos. Apaixonado por criar soluções práticas e eficientes para usuários.</p>
+      </div>
+    </main>
+
+    <footer>
+      Desenvolvido por Tiago Carvalho Gonçalves • 
+      <a href="https://github.com/Tiagotj7/Gerador-de-Curriculo" target="_blank" rel="noopener">Repositório</a>
+    </footer>
+  </div>
+
+  <script>
+    // simples animação de fadeInUp
+    document.addEventListener("DOMContentLoaded", () => {
+      const main = document.querySelector('main');
+      main.style.opacity = '1';
+      main.style.transform = 'translateY(0)';
+    });
+  </script>
+</body>
+</html>

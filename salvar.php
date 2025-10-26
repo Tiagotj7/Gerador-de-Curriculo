@@ -1,6 +1,11 @@
 <?php
-// salvar.php
+session_start();
 require "db.php";
+
+if (!isset($_SESSION['id_usuario'])) {
+    header("Location: login.php");
+    exit;
+}
 
 $nome = $_POST['nome'];
 $email = $_POST['email'];
@@ -25,10 +30,30 @@ if (!empty($_FILES['foto']['name'])) {
     }
 }
 
-$stmt = $pdo->prepare("INSERT INTO curriculos 
-(nome, foto, email, telefone, endereco, formacao, experiencia, habilidades, criado_em, status)
-VALUES (?, ?, ?, ?, ?, ?, ?, ?, NOW(), 1)");
-$stmt->execute([$nome, $fotoPath, $email, $telefone, $endereco, $formacao, $experiencia, $habilidades]);
+$stmt = $pdo->prepare("INSERT INTO curriculos (
+    nome, 
+    email, 
+    telefone, 
+    endereco, 
+    formacao, 
+    experiencia, 
+    habilidades, 
+    foto, 
+    id_usuario,
+    status
+) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 1)");
+
+$stmt->execute([
+    $_POST['nome'],
+    $_POST['email'],
+    $_POST['telefone'],
+    $_POST['endereco'],
+    $_POST['formacao'],
+    $_POST['experiencia'],
+    $_POST['habilidades'],
+    $fotoPath,
+    $_SESSION['id_usuario']
+]);
 
 header("Location: listar.php");
 exit;

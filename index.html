@@ -6,21 +6,140 @@
   <title>Gerador de Currículos — Apresentação</title>
   <meta name="description" content="Crie um currículo profissional em minutos. HTML, CSS, PHP e MySQL." />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="designer.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+  <style>
+    :root{
+      --bg:#0b0b0b;
+      --panel:#111;
+      --muted:#9aa3ad;
+      --green:#1fb16a;
+      --accent-grad:linear-gradient(135deg,#00b894,#00e0a8);
+    }
+
+    *{box-sizing:border-box;}
+    html,body{height:100%;margin:0;font-family:'Poppins',system-ui,Segoe UI,Roboto,Arial;
+      background:radial-gradient(1200px 400px at 10% 10%, rgba(0,160,255,0.03), transparent), #0a0a0a;
+      color:#eaf4ff;
+      overflow-x:hidden;
+    }
+
+    .container{width:92%;max-width:1200px;margin:40px auto}
+
+    header{
+      display:flex;justify-content:space-between;align-items:center;padding:6px 0;
+      opacity:0;transform:translateY(-20px);
+      animation:fadeInUp 1s ease forwards;animation-delay:0.1s;
+    }
+
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:46px;height:46px;border-radius:10px;background:var(--accent-grad);
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:#052;
+    }
+
+    .brand-name{font-weight:700;}
+    .brand-subtitle{font-size:.85rem;color:var(--muted);}
+
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600;transition:all 0.3s ease;}
+    nav a:hover{color:var(--green);}
+
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:10px}
+    .left{opacity:0;animation:fadeInUp 1s ease forwards;animation-delay:0.3s;}
+    .left h1{font-size:3rem;line-height:0.95;margin:0;white-space:nowrap;overflow:hidden;border-right:.15em solid var(--green);}
+    .left h1 .green{color:var(--green);}
+    .left p{color:var(--muted);font-size:1.05rem;margin-top:18px;max-width:640px;}
+
+    .ctas{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap;}
+    .btn{padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:10px;transition:all 0.3s ease;}
+    .btn-primary{background:linear-gradient(90deg,#06b337,#00e0a8);color:#042;}
+    .btn-primary:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 6px 15px rgba(0,224,168,0.4);}
+    .btn-secondary{border:1px solid rgba(255,255,255,0.06);color:var(--muted);background:transparent;}
+    .btn-secondary:hover{transform:translateY(-2px) scale(1.02);border-color:var(--green);color:var(--green);}
+
+    .features{display:flex;gap:12px;margin-top:30px;}
+    .feature{display:flex;align-items:center;gap:12px;background:transparent;padding:8px 12px;border-radius:10px;
+      opacity:0; transform:translateY(20px); transition:all 0.5s ease;}
+    .feature:hover{background:rgba(31,177,106,0.15); transform:translateY(-4px);}
+
+    .icon{width:44px;height:44px;border-radius:8px;background:rgba(31,177,106,0.12);
+      display:flex;align-items:center;justify-content:center;color:var(--green);font-weight:700;}
+    .feature .txt{color:var(--muted);font-weight:600;}
+
+    .panel{background:var(--panel);padding:26px;border-radius:14px;border:1px solid rgba(255,255,255,0.03);
+      box-shadow:0 10px 30px rgba(0,0,0,0.6);opacity:0;transform:translateY(20px);
+      animation:fadeInUp 1s ease forwards;animation-delay:0.6s;}
+
+    .panel h3{margin:0 0 16px;font-size:1.15rem;}
+    .field{margin-bottom:12px;}
+    .field label{display:block;color:var(--muted);font-size:.9rem;margin-bottom:6px;}
+    .field input{width:100%;padding:12px;border-radius:8px;border:none;background:#0e0e0f;color:#eaf4ff;transition:all 0.3s ease;}
+    .field input:focus{outline:none;box-shadow:0 0 8px rgba(31,177,106,0.5);}
+
+    .login-btn{margin-top:8px;padding:12px;border-radius:8px;background:linear-gradient(90deg,#06b337,#00e0a8);color:#042;font-weight:700;border:none;width:100%;transition:all 0.3s ease;}
+    .login-btn:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 6px 15px rgba(0,224,168,0.4);}
+
+    footer{margin-top:28px;color:var(--muted);text-align:center;font-size:.95rem;}
+    footer a{color:var(--green);text-decoration:none;transition:all 0.3s ease;}
+    footer a:hover{text-decoration:underline;}
+
+    @media (max-width:980px){.hero{grid-template-columns:1fr}.left h1{font-size:2.2rem}.panel{order:2}}
+
+    @keyframes fadeInUp{
+      0%{opacity:0; transform:translateY(20px);}
+      100%{opacity:1; transform:translateY(0);}
+    }
+
+    @keyframes typing{
+      from{width:0;}
+      to{width:100%;}
+    }
+
+    /* Fundo animado sutil */
+    body{
+      animation:bgPulse 10s ease-in-out infinite alternate;
+    }
+    @keyframes bgPulse{
+      0%{background-size:1200px 400px;}
+      50%{background-size:1250px 450px;}
+      100%{background-size:1200px 400px;}
+    }
+
+    /* --- mini-currículo compacto (adaptado para combinar com designer.css) --- */
+    .mini-resume{
+      background:#ffffff;
+      color:#072033;
+      padding:12px;
+      border-radius:10px;
+      margin-top:8px;
+      border:1px solid rgba(0,0,0,0.04);
+      box-shadow:0 8px 20px rgba(2,6,23,0.06);
+      font-size:0.85rem;
+      line-height:1.25;
+      max-width:320px;
+    }
+    .mini-resume .row{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+    .mini-resume .name{font-weight:700;font-size:0.98rem}
+    .mini-resume .role{color:#395a73;font-size:0.78rem;margin-top:6px}
+    .mini-resume .contact{font-size:0.78rem;color:#355a72;text-align:right}
+    .mini-resume hr{border:none;height:1px;background:#eef2f6;margin:8px 0;border-radius:2px}
+    .mini-resume .section-title{font-weight:700;font-size:0.78rem;color:#072033;margin-top:6px}
+    .mini-resume .muted{color:#6b7886;font-size:0.75rem}
+    .mini-resume .skill-pill{background:#eef8f2;color:#01643a;padding:5px 8px;border-radius:999px;font-weight:600;font-size:0.72rem;margin-right:6px;margin-top:6px;display:inline-block}
+  </style>
 </head>
 <body>
   <div class="container">
     <header>
       <div class="brand">
-        <div class="logo">CV</div>
+        <div class="logo">GC</div>
         <div>
           <div class="brand-name">Gerador de Currículos</div>
           <div class="brand-subtitle">Rápido • Simples • Profissional</div>
         </div>
       </div>
       <nav>
-        <a href="#">Sobre</a>
-        <a href="#">Ver Currículos</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="ver_curriculo.html">Ver Currículos</a>
         <a href="cadastro.php" class="btn btn-primary">Começar</a>
       </nav>
     </header>
@@ -42,21 +161,111 @@
         </div>
       </div>
 
-      <aside class="panel">
-        <h3>Acesse sua conta</h3>
-        <div class="field"><label>Email</label><input type="email" placeholder="seu@exemplo.com"></div>
-        <div class="field"><label>Senha</label><input type="password" placeholder="••••••••"></div>
-        <button class="login-btn">Entrar</button>
-        <small>Não tem conta? Use o formulário principal para criar um novo currículo.</small>
+      <!-- painel com o mini-currículo compacto (substitui "Acesse sua conta") -->
+      <aside class="panel" aria-labelledby="panel-title">
+        <h3 id="panel-title">Currículo</h3>
+
+        <div class="mini-resume" id="miniResume" role="region" aria-label="Mini currículo">
+          <div class="row">
+            <div>
+              <div class="name">Tiago Carvalho Gonçalves</div>
+              <div class="role">Desenvolvedor Full-Stack</div>
+            </div>
+            <div class="contact">
+              tiago.carvalho@example.com<br>
+              +55 (71) 99919-9926
+            </div>
+          </div>
+
+          <hr>
+
+          <div>
+            <div class="section-title">Resumo</div>
+            <div class="muted" style="margin-top:6px;color:#233244;font-size:.82rem">
+              Desenvolvedor Full-Stack com experiência em aplicações web, integração com APIs e automação de processos. Foco em performance e usabilidade.
+            </div>
+          </div>
+
+          <div style="margin-top:8px">
+            <div class="section-title">Exp.</div>
+            <div style="margin-top:6px;color:#233244;font-size:.82rem;line-height:1.15">
+              <strong>Front-End (Freelancer)</strong><br>
+              Projeto E-commerce — jul/2025 – atual<br>
+              Interface responsiva com React; otimizações e integrações.
+            </div>
+          </div>
+
+          <div style="display:flex;gap:8px;margin-top:8px;align-items:flex-start">
+            <div style="flex:1">
+              <div class="section-title">Educação</div>
+              <div style="margin-top:6px;color:#233244;font-size:.82rem">Tecnólogo em ADS — Gran Centro Universitário (2025–2027)</div>
+            </div>
+
+            <div style="width:1px;background:#eef2f6;height:56px;margin-left:6px"></div>
+
+            <div style="flex:1;min-width:100px">
+              <div class="section-title">Habilidades</div>
+              <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:6px">
+                <span class="skill-pill">JavaScript</span>
+                <span class="skill-pill">React</span>
+                <span class="skill-pill">Node.js</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:8px;color:#233244;font-size:.82rem">
+            <div class="section-title">Projeto</div>
+            <div style="margin-top:6px">StockPro — Gestão de Estoque: painel, autenticação Firebase e tabelas interativas.</div>
+          </div>
+        </div>
       </aside>
     </main>
 
     <footer>
       Desenvolvido por Tiago Carvalho Gonçalves • 
-      <a href="https://github.com/seuusuario/gerador-curriculos" target="_blank">Repositório</a>
+      <a href="https://github.com/Tiagotj7/Gerador-de-Curriculo" target="_blank" rel="noopener">Repositório</a>
     </footer>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    // === Digitação animada no título ===
+    const title = document.querySelector('.left h1');
+    const fullText = title ? title.textContent : '';
+    if (title) {
+      title.textContent = '';
+      let i = 0;
+      function typeWriter(){
+        if(i < fullText.length){
+          title.textContent += fullText.charAt(i);
+          i++;
+          setTimeout(typeWriter,50);
+        } else {
+          title.innerHTML = title.textContent.replace(/Currículo/i, function(m){
+            return '<span class="green">' + m + '</span>';
+          });
+        }
+      }
+      typeWriter();
+    }
+
+    // === Animar features ao aparecer na tela ===
+    const features = document.querySelectorAll('.feature');
+    const observer = new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.style.opacity='1';
+          entry.target.style.transform='translateY(0)';
+        }
+      })
+    },{threshold:0.2});
+    features.forEach(f => observer.observe(f));
+
+    // === Animação do painel ao hover ===
+    const panel = document.querySelector('.panel');
+    if (panel) {
+      panel.addEventListener('mouseenter', ()=> panel.style.transform='translateY(-5px)');
+      panel.addEventListener('mouseleave', ()=> panel.style.transform='translateY(0)');
+    }
+  </script>
 </body>
 </html>

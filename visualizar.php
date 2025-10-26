@@ -16,6 +16,8 @@ if (!$c) die("Currículo não encontrado");
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Currículo — <?= htmlspecialchars($c['nome']) ?></title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
 <style>
   body {
     font-family: Arial, Helvetica, sans-serif;

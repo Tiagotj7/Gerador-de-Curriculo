@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Gerador de Currículos</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
 <link rel="stylesheet" href="style.css">
 <style>
 .foto-area {

@@ -53,6 +53,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Editar Currículo</title>
+      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
     <link rel="stylesheet" href="style.css">
     <style>
     .foto-area {
@@ -81,6 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <div class="container">
         <h1>Editar Currículo</h1>
+        
         <form method="POST" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?= $curriculo['id'] ?>">
             

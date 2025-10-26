@@ -9,6 +9,8 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
 <meta charset="UTF-8">
 <title>Lista de Usuários</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
